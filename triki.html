@@ -25,35 +25,14 @@ de la misma ficha gana</h4>
 </div>
 <link href="triki.css" rel="stylesheet">
 <br><br>
-<script>
-    function ornearbrowni() {
-        var brownie = {
-            color: "cafe",
-            dulce: "arequipe",
-            cantidad: 8,
-            rico: "true",
-        }
-        return brownie
-    }                                                                                                                                                                                                                                                                                              
-</script>
 
-<script>
-    function ornearbrowni() {
-        var brownie = {
-            color: "cafe",
-            dulce: "arequipe",
-            cantidad: 8,
-            rico: "true",
-        }
-        return brownie
-    }                                                                                                                                                                                                                                                                                              
-</script>
+
 <script>
     var elementos = Array.from(document.querySelectorAll("button"))
 
     elementos.forEach(function (elemento) {
         elemento.addEventListener('click', function () {
-            marcar(this, 'X')
+            marcar(this, 'o')
         })
     })
 
@@ -61,7 +40,6 @@ de la misma ficha gana</h4>
         boton.textContent = jugador
     }                                                                                                                                                                                                                                                                                              
 </script>
-
 
 
 
