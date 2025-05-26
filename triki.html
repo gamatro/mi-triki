@@ -1,0 +1,75 @@
+<h1>triki</h1>
+<h2>como jugar<br></h2>
+<h4>cada jugador elige si va a jugar con la x o con el o, la x <br>
+empiesa, para empesar ponen sus
+piezas en el tablero de a turnos <br>y el que logre primero hacer una linea de tres <br>
+de la misma ficha gana</h4>
+<br> 
+<br> 
+<br> 
+<div>
+    <style>
+        div {
+            background-color: black;
+        }
+    </style>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+</div>
+<link href="triki.css" rel="stylesheet">
+<br><br>
+<script>
+    function ornearbrowni() {
+        var brownie = {
+            color: "cafe",
+            dulce: "arequipe",
+            cantidad: 8,
+            rico: "true",
+        }
+        return brownie
+    }                                                                                                                                                                                                                                                                                              
+</script>
+
+<script>
+    function ornearbrowni() {
+        var brownie = {
+            color: "cafe",
+            dulce: "arequipe",
+            cantidad: 8,
+            rico: "true",
+        }
+        return brownie
+    }                                                                                                                                                                                                                                                                                              
+</script>
+<script>
+    var elementos = Array.from(document.querySelectorAll("button"))
+
+    elementos.forEach(function (elemento) {
+        elemento.addEventListener('click', function () {
+            marcar(this, 'X')
+        })
+    })
+
+    function marcar(boton, jugador) {
+        boton.textContent = jugador
+    }                                                                                                                                                                                                                                                                                              
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
