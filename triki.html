@@ -1,6 +1,6 @@
 <h1>triki</h1>
 <h2>como jugar<br></h2>
-<h4>cada jugador elige si va a jugar con la x o con el o, la x <br>
+<h4>Cada jugador elige si va a jugar con la x o con el o, la x <br>
 empiesa, para empesar ponen sus
 piezas en el tablero de a turnos <br>y el que logre primero hacer una linea de tres <br>
 de la misma ficha gana</h4>
@@ -29,16 +29,28 @@ de la misma ficha gana</h4>
 
 <script>
     var elementos = Array.from(document.querySelectorAll("button"))
+    var turno_actual = "x"
 
     elementos.forEach(function (elemento) {
         elemento.addEventListener('click', function () {
-            marcar(this, 'o')
+            marcar(this, turno_actual)
+
+            turno_actual = intercala(turno_actual)
         })
     })
 
     function marcar(boton, jugador) {
         boton.textContent = jugador
-    }                                                                                                                                                                                                                                                                                              
+    }  
+    function intercala(turno){
+        if (turno == "x") {
+            return "o"            
+        }
+
+        if (turno == "o") {
+            return "x"
+        }
+    }                                                                                                                                                                                                                                                                                            
 </script>
 
 
