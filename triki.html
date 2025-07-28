@@ -34,9 +34,14 @@ de la misma ficha gana</h4>
     elementos.forEach(function (elemento) {
         elemento.addEventListener('click', function () {
             marcar(this, turno_actual)
-
-            turno_actual = intercala(turno_actual)
             elemento.disabled = true
+            if (revisar_triki()) {
+               elementos.forEach (function(boton) {
+                boton.disabled = true
+               })
+               alert ("ganó "+ turno_actual)
+            }
+            turno_actual = intercala(turno_actual)
         })
     })
 
@@ -51,7 +56,54 @@ de la misma ficha gana</h4>
         if (turno == "o") {
             return "x"
         }
-    }                                                                                                                                                                                                                                                                                            
+    }      
+    
+    var tres_en_linea = [
+[0, 1, 2], 
+[3, 4, 5], 
+[6, 7, 8], 
+[0, 3, 6], 
+[1, 4, 7],     
+[2, 5, 8], 
+[0, 4, 8], 
+[2, 4, 6], 
+
+
+
+
+
+    ]
+
+    function revisar_triki() {
+      return tres_en_linea.some(function (posicion) {
+        var boton_1 = elementos[posicion[0]]
+        var boton_2 = elementos[posicion[1]]
+        var boton_3 = elementos[posicion[2]]
+        
+        return revisar_condicion_ganadora(boton_1, boton_2, boton_3)
+
+
+      })
+    }
+
+     function desabilitarbotones () {
+        elementos.forEach(boton => {
+            boton.disabled = true
+        });
+     }
+
+     function revisar_condicion_ganadora(
+        boton_1, boton_2, boton_3 
+     ) {
+          if (boton_1.disabled == true && boton_2.disabled == true && boton_3.disabled == true && boton_1.textContent == turno_actual && 
+            boton_2.textContent == turno_actual && boton_3.textContent == turno_actual 
+        ) {
+           return true          
+        }     
+
+        return false
+     }
+
 </script>
 
 
