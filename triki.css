@@ -10,3 +10,10 @@ display: flex;
 padding: 4px; 
 justify-content: space-evenly;
 }
+
+.reiniciar {
+    border-radius: 50%;
+    position: relative;
+    top: -270px;
+    left: 192px;
+}
