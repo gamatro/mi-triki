@@ -43,11 +43,19 @@ de la misma ficha gana</h4>
             marcar(this, turno_actual)
             elemento.disabled = true
             if (revisar_triki()) {
-               elementos.forEach (function(boton) {
-                boton.disabled = true
-               })
-               document.getElementById("mensaje_ganador").textContent = "¡Ganó " + turno_actual + "!";
-            }
+    elementos.forEach(function(boton) {
+        boton.disabled = true
+    })
+    elementos[3].textContent = "ganó";
+    elementos[4].textContent = turno_actual;
+    elementos[5].textContent = "";
+    elementos[3].style.color = "white";
+    elementos[4].style.color = "white";
+    elementos[5].style.color = "white";
+    elementos[3].style.fontSize = "16px";
+    elementos[4].style.fontSize = "16px";
+    elementos[5].style.fontSize = "16px";
+}
             turno_actual = intercala(turno_actual)
         })
     })
