@@ -43,17 +43,27 @@ de la misma ficha gana</h4>
             marcar(this, turno_actual)
             elemento.disabled = true
             if (revisar_triki()) {
+    // Deshabilitar todos los botones
     elementos.forEach(function(boton) {
-        boton.disabled = true
-    })
-    elementos[3].textContent = "";
-    elementos[4].textContent = "ganó";
-    elementos[5].textContent = turno_actual;
-    elementos[3].style.color = "white";
-    elementos[4].style.color = "white";
-    elementos[5].style.color = "white";
-    elementos[4].style.fontSize = "20px";
-    elementos[5].style.fontSize = "20px";
+        boton.disabled = true;
+        // Ocultar todos los botones excepto el mensaje
+        boton.style.display = 'none';
+    });
+    
+    // Crear un nuevo botón grande
+    var botonGrande = document.createElement('button');
+    botonGrande.textContent = `ganó ${turno_actual}`;
+    botonGrande.style.width = '100%';
+    botonGrande.style.height = '100%';
+    botonGrande.style.fontSize = '24px';
+    botonGrande.style.color = 'white';
+    botonGrande.style.backgroundColor = 'black';
+    botonGrande.style.border = 'none';
+    
+    // Insertar el botón grande en el contenedor
+    var contenedor = document.querySelector('.contenedor_botones');
+    contenedor.innerHTML = '';
+    contenedor.appendChild(botonGrande);
 }
             turno_actual = intercala(turno_actual)
         })
